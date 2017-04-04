@@ -69,7 +69,7 @@ Output:
 ### Message
 
 Use this to display any single-line message .
-Can be used with [Request](https://github.com/request/request) (npm module)
+<br>Can be used with [Request](https://github.com/request/request) (npm module)
 
 Standard Usage:
 
