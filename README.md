@@ -6,7 +6,7 @@ A logger that you can utilise within your projects
 ### Instalation
 
 ```
-var log = require('log.js')
+var log = require('log-dot-js')
 ```
 
 ### Print
@@ -86,7 +86,7 @@ Using Request
 
 ```
 var request = require('request');
-    log = require('log');
+    log = require('log-dot-js');
 
 request('http://yourmessagelink.domain', function (error, response, body) {
   console.log('error:', error); 
