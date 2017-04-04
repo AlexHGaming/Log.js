@@ -1,6 +1,6 @@
 {
   "name": "log-dot-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A logger that you can utilise within your projects",
   "main": "log.js",
   "keywords": [

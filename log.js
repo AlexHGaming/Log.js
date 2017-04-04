@@ -16,6 +16,7 @@ module.exports.info = info;
 module.exports.print = print;
 module.exports.message = message;
 module.exports.writeFile = writeFile;
+module.exports.welcome = welcome;
 
 function err(message) {
     console.log(Time() + "[" + "ERROR".red + "]", message.red);
@@ -39,15 +40,38 @@ function print(message) {
 
 function message(message) {
     console.log(Time() + "[" + "MESSAGE".magenta + "]", message.magenta);
-}
+};
+
+function welcome() {
+        if (fs.existsSync("./package.json" || "../package.json")) {
+            var pjson = require("./package.json" || "../package.json");
+                project_version = pjson.version;
+                project_name = pjson.name;
+            this.info("Welcome to " + project_name.rainbow.underline + " version ".blue + project_version.rainbow.underline);
+        } else if (!fs.existsSync("./package.json" || "../package.json")) {
+            this.err("Package.json not found!")
+            process.exit();
+        }
+    };
+
 
 function writeFile(message) {
 
         text += message + "\n";
 
     if (!fs.existsSync("./log")) {
-        err("./log doesn't exist!");
-        success("Creating new ./log folder.")
+        this.err("./log doesn't exist!");
+        this.success("Creating new ./log folder.")
+        if (fs.existsSync("./package.json" || "../package.json")) {
+            var pjson = require("./package.json" || "../package.json");
+                project_name = pjson.name;
+            this.info("Please run " + project_name + " again for your log to save");
+        } else if (!fs.existsSync("./package.json" || "../package.json")) {
+            this.err("Package.json not found!")
+            process.exit();
+        } else {
+            this.info("Please run your project again for your log to save");
+        }
         fs.mkdirSync("./log")
     } else {
             process.on('exit', () => {
