@@ -111,8 +111,8 @@ log.writeFile("Info that you want to store");
 ### Welcome
 
 Use this for a welcome message.
-It will get your project name and version from the package.json.
-If you do not have a package.json file it will produce an error.
+<br>It will get your project name and version from the package.json.
+<br>If you do not have a package.json file it will produce an error.
 
 Usage:
 
