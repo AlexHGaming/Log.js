@@ -4,8 +4,9 @@
  * @author TinyDev
  * @license Apache-2.0
  */
+
 var color = require("colors"),
-    fs = require("fs")
+    fs = require("fs"),
     text = "";
 
 module.exports.err = err;
@@ -43,7 +44,7 @@ function message(message) {
 
 function welcome() {
     if (fs.existsSync("./package.json" || "../package.json")) {
-        var pjson = require("./package.json" || "../package.json");
+        var pjson = require("../../package.json");
         project_version = pjson.version;
         project_name = pjson.name;
         this.info("Welcome to " + project_name.rainbow.underline + " version ".blue + project_version.rainbow.underline);
