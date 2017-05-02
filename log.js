@@ -75,7 +75,7 @@ function writeFile(message) {
         fs.mkdirSync("./log")
     } else {
         process.on('exit', () => {
-            fs.writeFileSync("./log/log" + ".txt", Time() + text, 'utf-8');
+            fs.writeFileSync("./log/log.txt", Time() + text, 'utf-8');
         });
 
     }
