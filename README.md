@@ -68,31 +68,13 @@ Output:
 
 ### Message
 
-Use this to display any single-line message .
-<br>Can be used with [Request](https://github.com/request/request) (npm module)
-
-Standard Usage:
+Use this to display any message.
+This gets the message from the specified url.
 
 ```
-log.message("Your message");
-```
+var log = require('log-dot-js');
+log.message("yoururlhere.domain");
 
-Output:
-
-![Screenshot](http://i.imgur.com/uVc8z3R.png)
-
-
-Using Request
-
-```
-var request = require('request');
-    log = require('log-dot-js');
-
-request('http://yourmessagelink.domain', function (error, response, body) {
-  console.log('error:', error); 
-  console.log('statusCode:', response && response.statusCode);
-  log.message('body:', body); // Print message
-});
 ```
 
 ### Write File

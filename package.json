@@ -8,7 +8,8 @@
     "log"
   ],
   "dependencies": {
-    "colors":"latest"
+    "colors":"latest",
+    "request":"latest"
   },
   "author": "TinyDev",
   "license": "Apache-2.0"

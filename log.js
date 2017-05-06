@@ -7,6 +7,7 @@
 
 var color = require("colors"),
     fs = require("fs"),
+    request = require("request");
     text = "";
 
 module.exports.err = err;
@@ -38,8 +39,10 @@ function print(message) {
     console.log(Time() + "\b", message);
 };
 
-function message(message) {
-    console.log(Time() + "[" + "MESSAGE".magenta + "]", message.magenta);
+function message(url) {
+message = request(url, function (error, response, body) {
+    console.log(Time() + "[" + "MESSAGE".magenta + "]", body);
+});
 };
 
 function welcome() {
