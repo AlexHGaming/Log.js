@@ -14,7 +14,7 @@ module.exports.err = err;
 module.exports.success = success;
 module.exports.warn = warn;
 module.exports.info = info;
-module.exports.print = print;
+module.exports.print = logprint;
 module.exports.message = message;
 module.exports.writeFile = writeFile;
 module.exports.welcome = welcome;
@@ -35,7 +35,7 @@ function info(message) {
     console.log(Time() + "[" + "INFO".blue + "]", message.blue);
 };
 
-function print(message) {
+function logprint(message) {
     console.log(Time() + "\b", message);
 };
 
