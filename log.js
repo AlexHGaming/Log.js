@@ -8,7 +8,7 @@
 var color = require("colors"),
     fs = require("fs"),
     request = require("request");
-    text = "";
+text = "";
 
 module.exports.err = err;
 module.exports.success = success;
@@ -40,9 +40,9 @@ function logprint(message) {
 };
 
 function message(url) {
-message = request(url, function (error, response, body) {
-    console.log(Time() + "[" + "MESSAGE".magenta + "]", body);
-});
+    message = request(url, function (error, response, body) {
+        console.log(Time() + "[" + "MESSAGE".magenta + "]", body);
+    });
 };
 
 function welcome() {
@@ -63,7 +63,7 @@ function writeFile(message) {
     text += message + "\n";
 
     if (!fs.existsSync("./log")) {
-        this.err("./log doesn't exist!"); 
+        this.err("./log doesn't exist!");
         this.success("Creating new ./log folder.")
         if (fs.existsSync("./package.json" || "../package.json")) {
             var pjson = require("./package.json" || "../package.json");
