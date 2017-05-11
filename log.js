@@ -50,9 +50,9 @@ function welcome() {
         var pjson = require("../../package.json");
         project_version = pjson.version;
         project_name = pjson.name;
-        this.info("Welcome to " + project_name.rainbow.underline + " version ".blue + project_version.rainbow.underline);
+        info("Welcome to " + project_name.rainbow.underline + " version ".blue + project_version.rainbow.underline);
     } else if (!fs.existsSync("./package.json" || "../package.json")) {
-        this.err("Package.json not found!")
+        err("Package.json not found!")
         process.exit();
     }
 }
@@ -62,17 +62,17 @@ function writeFile(message) {
     text += message + "\n";
 
     if (!fs.existsSync("./log")) {
-        this.err("./log doesn't exist!");
-        this.success("Creating new ./log folder.")
+        err("./log doesn't exist!");
+        success("Creating new ./log folder.")
         if (fs.existsSync("./package.json" || "../package.json")) {
             var pjson = require("./package.json" || "../package.json");
             project_name = pjson.name;
-            this.info("Please run " + project_name + " again for your log to save");
+            info("Please run " + project_name + " again for your log to save");
         } else if (!fs.existsSync("./package.json" || "../package.json")) {
-            this.err("Package.json not found!")
+            err("Package.json not found!")
             process.exit();
         } else {
-            this.info("Please run your project again for your log to save");
+            info("Please run your project again for your log to save");
         }
         fs.mkdirSync("./log")
     } else {
