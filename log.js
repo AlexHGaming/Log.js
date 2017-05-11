@@ -7,8 +7,8 @@
 
 var color = require("colors"),
     fs = require("fs"),
-    request = require("request");
-text = "";
+    request = require("request"),
+    text = "";
 
 module.exports.err = err;
 module.exports.success = success;
@@ -21,29 +21,29 @@ module.exports.welcome = welcome;
 
 function err(message) {
     console.log(Time() + "[" + "ERROR".red + "]", message.red);
-};
+}
 
 function success(message) {
     console.log(Time() + "[" + "OK".green + "]", message.green);
-};
+}
 
 function warn(message) {
     console.log(Time() + "[" + "WARNING".yellow + "]", message.yellow);
-};
+}
 
 function info(message) {
     console.log(Time() + "[" + "INFO".blue + "]", message.blue);
-};
+}
 
 function logprint(message) {
     console.log(Time() + "\b", message);
-};
+}
 
 function message(url) {
     message = request(url, function (error, response, body) {
         console.log(Time() + "[" + "MESSAGE".magenta + "]", body);
     });
-};
+}
 
 function welcome() {
     if (fs.existsSync("./package.json" || "../package.json")) {
@@ -55,11 +55,10 @@ function welcome() {
         this.err("Package.json not found!")
         process.exit();
     }
-};
+}
 
 
 function writeFile(message) {
-
     text += message + "\n";
 
     if (!fs.existsSync("./log")) {
@@ -80,15 +79,13 @@ function writeFile(message) {
         process.on('exit', () => {
             fs.writeFileSync("./log/log.txt", Time() + text, 'utf-8');
         });
-
     }
-
 }
 
 function Time() {
     var date = new Date(),
         hour = date.getHours(),
         minute = date.getMinutes(),
-        second = date.getSeconds()
+        second = date.getSeconds();
     return "[" + hour + ":" + minute + ":" + second + "] ";
 }
