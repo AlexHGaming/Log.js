@@ -3,7 +3,7 @@
 /**
  * @name Log.js
  * @description A logger that you can utilise within your projects
- * @author TinyDev
+ * @author FantasyIsBae
  * @license Apache-2.0
  */
 const color = require("colors"),
