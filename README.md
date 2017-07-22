@@ -5,8 +5,16 @@ A logger that you can utilise within your projects
 
 ### Instalation
 
+First install the module
+
 ```
-var log = require('log-dot-js')
+npm install log-dot-js
+```
+ 
+Then add this code snippet to your file 
+
+```JS
+const log = require('log-dot-js')
 ```
 
 ### Print
@@ -15,7 +23,7 @@ This is used to simply print a message along with your local time next to it wit
 
 Usage:
 
-```
+```JS
 log.print("Your message");
 ```
 
@@ -29,7 +37,7 @@ This is used to display any sort of information you would like the user to know 
 
 Usage:
 
-```
+```JS
 log.info("Some information");
 ```
 
@@ -43,7 +51,7 @@ This is used to show the user a task has been succesfully completed
 
 Usage:
 
-```
+```JS
 log.success("Some operation completed successfully");
 ```
 
@@ -58,7 +66,7 @@ This is used to display a warning
 
 Usage: 
 
-```
+```JS
 log.warn("Some warning");
 ```
 
@@ -71,7 +79,7 @@ Output:
 Use this to display any message.
 This gets the message from the specified url.
 
-```
+```JS
 var log = require('log-dot-js');
 log.message("yoururlhere.domain");
 
@@ -86,7 +94,7 @@ Use this to store logs in a file.
 
 Usage:
 
-```
+```JS
 log.writeFile("Info that you want to store");
 ```
 
@@ -98,7 +106,7 @@ Use this for a welcome message.
 
 Usage:
 
-```
+```JS
 log.welcome();
 ```
 
