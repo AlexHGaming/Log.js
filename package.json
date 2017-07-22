@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "colors":"latest",
-    "request":"latest"
+    "minirequest":"latest"
   },
   "author": "TinyDev",
   "license": "Apache-2.0"

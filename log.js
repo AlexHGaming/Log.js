@@ -6,9 +6,10 @@
  * @author FantasyIsBae
  * @license Apache-2.0
  */
+
 const color = require("colors"),
     fs = require("fs"),
-    request = require("request"),
+    request = require("minirequest"),
     text = "",
     log = {
         err: function (message) {
@@ -27,8 +28,8 @@ const color = require("colors"),
             console.log(Time() + "\b", message);
         },
         message: function (url) {
-            message = request(url, function (error, response, body) {
-                console.log(Time() + "[" + "MESSAGE".magenta + "]", body);
+            request(url, function (error, response, content) {
+                    console.log(Time() + "[" + "MESSAGE".magenta + "]", content);
             });
         },
         welcome: function () {
@@ -39,7 +40,7 @@ const color = require("colors"),
                 this.info("Welcome to " + project_name.rainbow.underline + " version ".blue + project_version.rainbow.underline);
             } else if (!fs.existsSync("./package.json" || "../package.json")) {
                 throw new TypeError("Package.json not found within this project.")
-            }
+            };
         },
 
         writeFile: function (message) {
@@ -55,16 +56,16 @@ const color = require("colors"),
                 } else {
                     this.info("Please run your project again for your log to save");
                 }
-                fs.mkdirSync("./log")
+                fs.mkdirSync("./log");
             } else {
                 process.on('exit', () => {
                     fs.writeFileSync("./log/log.txt", Time() + text, 'utf-8');
                 });
 
-            }
-        }
+            };
+        },
 
-    }
+    };
 
 function Time() {
     var date = new Date(),
@@ -72,6 +73,6 @@ function Time() {
         minute = date.getMinutes(),
         second = date.getSeconds()
     return "[" + hour + ":" + minute + ":" + second + "] ";
-}
+};
 
 module.exports = log;
