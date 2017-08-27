@@ -68,11 +68,10 @@ const color = require("colors"),
     };
 
 function Time() {
-    var date = new Date(),
-        hour = date.getHours(),
-        minute = date.getMinutes(),
-        second = date.getSeconds()
-    return "[" + hour + ":" + minute + ":" + second + "] ";
+d = new Date();
+datetext = d.toTimeString();
+datetext = datetext.split(' ')[0];
+    return "[" + datetext + "] ";
 };
 
 module.exports = log;
